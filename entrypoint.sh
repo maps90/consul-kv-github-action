@@ -7,4 +7,4 @@ export CONSUL_HTTP_ADDR="${INPUT_URL}"
 value=$(consul kv get "${INPUT_KEY}")
 
 # sets environment variable in GitHub Action
-echo "::set-env name=${INPUT_KEY}::${value}"
+echo "${INPUT_KEY}=${value}" >> $GITHUB_OUTPUT 
